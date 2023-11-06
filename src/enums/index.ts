@@ -8,3 +8,7 @@ export enum Size {
   Admin_group = 'adg',
   Flexible = 'flexible',
 }
+
+export enum ScreenName {
+  Chat = 'Chat',
+}

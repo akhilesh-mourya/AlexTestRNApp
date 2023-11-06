@@ -10,6 +10,7 @@ import StackNavigator from './src/navigation';
 import {persistStore} from 'redux-persist';
 
 import theme from './src/theme';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -27,7 +28,9 @@ const App = () => {
             barStyle={'dark-content'}
             backgroundColor={backgroundStyle.backgroundColor}
           />
-          <StackNavigator />
+          <SafeAreaView style={{flex: 1}}>
+            <StackNavigator />
+          </SafeAreaView>
         </ThemeProvider>
       </PersistGate>
     </Provider>
