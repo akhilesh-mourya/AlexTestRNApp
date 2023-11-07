@@ -21,6 +21,13 @@ export const SafeAreaContainer = styled.SafeAreaView.attrs(() => ({
   ${color} ${layout} ${space};
 `;
 
+
+export const Block = styled.View.attrs(() => ({
+  flex: 1,
+}))`
+  ${color} ${layout} ${space};
+`;
+
 export const Container = styled(KeyboardAwareScrollView).attrs(() => ({
   flex: 1,
   contentContainerStyle: {flex: 1},

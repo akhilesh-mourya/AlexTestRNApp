@@ -2,6 +2,7 @@ import React, {useState, useEffect, FC, useMemo} from 'react';
 import {SectionList} from 'react-native';
 import {
   BgGradiantImage,
+  Block,
   Container,
   HeaderTitle,
   MainContainer,
@@ -68,7 +69,7 @@ const ChatScreen: FC<{}> = () => {
       <SafeAreaContainer>
         <Header />
         <Container>
-          {restructureMessageData && (
+          {restructureMessageData ? (
             <SectionList
               sections={restructureMessageData}
               showsVerticalScrollIndicator={false}
@@ -81,6 +82,8 @@ const ChatScreen: FC<{}> = () => {
               }
               inverted
             />
+          ) : (
+            <Block />
           )}
           <Footer />
         </Container>
