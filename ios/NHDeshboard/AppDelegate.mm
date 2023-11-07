@@ -10,13 +10,6 @@
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
-  
-  for (NSString *familyName in [UIFont familyNames]){
-      NSLog(@"Family name: %@", familyName);
-      for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-          NSLog(@"--Font name: %@", fontName);
-      }
-  }
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
