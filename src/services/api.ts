@@ -1,19 +1,8 @@
 import {createApi, fetchBaseQuery, retry} from '@reduxjs/toolkit/query/react';
-import {RootState} from '../redux/store';
 import {BASE_URL} from '@env';
-
-console.log('NEW_BASE_URL', BASE_URL);
 
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
-  prepareHeaders: (headers, {getState}) => {
-    const token = (getState() as RootState).auth.token;
-    if (token) {
-      headers.set('authorization', `Bearer ${token}`);
-      console.log('token', token);
-    }
-    return headers;
-  },
   timeout: 30000,
 });
 
@@ -33,7 +22,7 @@ export const api = createApi({
    * Otherwise, a single API definition should be used in order to support tag invalidation,
    * among other features
    */
-  reducerPath: 'customerApi',
+  reducerPath: 'loading',
   /**
    * A bare bones base query would just be `baseQuery: fetchBaseQuery({ baseUrl: '/' })`
    */

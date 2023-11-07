@@ -1,13 +1,17 @@
 import {SvgXml} from 'react-native-svg';
 import styled from 'styled-components/native';
 import {color, layout, space, border} from 'styled-system';
-import {BACK_ARROW_ICON} from '../../assets/svg';
+import {PLUS_ICON} from '../../assets/svg';
 import {scale} from 'react-native-size-matters/extend';
 import {verticalScale} from 'react-native-size-matters/extend';
 import {moderateScale} from 'react-native-size-matters';
 import {FontFamily} from 'custom_enums';
 
-export const MainContainer = styled.View.attrs(() => ({}))`
+export const MainContainer = styled.View.attrs(() => ({
+  mt: verticalScale(16),
+}))`
+  flex-direction: row;
+  align-items: center;
   ${color};
   ${space};
   ${layout};
@@ -15,15 +19,14 @@ export const MainContainer = styled.View.attrs(() => ({}))`
 `;
 
 export const Block = styled.View.attrs(() => ({}))`
-  flex-direction: row;
   align-items: center;
   ${color}
   ${space}
   ${layout}
 `;
 
-export const BackIcon = styled(SvgXml).attrs<any>(() => ({
-  xml: BACK_ARROW_ICON,
+export const PlusIcon = styled(SvgXml).attrs<any>(() => ({
+  xml: PLUS_ICON,
   ml: scale(16),
 }))`
   ${color}
@@ -31,21 +34,31 @@ export const BackIcon = styled(SvgXml).attrs<any>(() => ({
   ${layout}
 `;
 
-export const HeaderTitle = styled.Text.attrs(props => ({
+export const MessageInput = styled.TextInput.attrs(props => ({
   color: props.theme.colors.white,
-  ml: scale(16),
+  placeholderTextColor: '#B4B4B4',
+  placeholder: 'Send a message',
+  borderRadius: moderateScale(32),
+  borderWidth: 1,
+  borderColor: '#5E5E5E',
+  height: verticalScale(37),
+  bg: '#0E042280',
+  flex: 1,
+  ml: scale(8),
+  pl: scale(16),
 }))`
-  font-size: ${moderateScale(24, 0.5)}px;
-  font-family: ${FontFamily.Bold};
+  font-size: ${moderateScale(14.5, 0.5)}px;
+  font-weight: 500;
+  font-family: ${FontFamily.Regular};
   ${color}
   ${space}
   ${layout}
 `;
 
 export const AvatarImg = styled.Image.attrs(() => ({
-  width: scale(40),
-  height: scale(40),
-  borderRadius: scale(20),
+  width: scale(32),
+  height: scale(32),
+  borderRadius: scale(16),
   ml: scale(16),
 }))`
   ${color}
@@ -53,9 +66,9 @@ export const AvatarImg = styled.Image.attrs(() => ({
   ${layout}
 `;
 
-export const Separator = styled.View.attrs(props => ({
+export const Separator = styled.View.attrs((props) => ({
   mt: verticalScale(16),
-  height: 0.8,
+  height: verticalScale(1),
   bg: props.theme.colors.inputBG,
 }))`
   ${color}

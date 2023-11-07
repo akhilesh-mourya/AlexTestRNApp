@@ -9,7 +9,6 @@ def node_require(script)
  end
 
  node_require('react-native/scripts/react_native_pods.rb')
- node_require('react-native-permissions/scripts/setup.rb')
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
@@ -33,10 +32,6 @@ end
 
 target 'NHDeshboard' do
   config = use_native_modules!
-  permissions_path = '../node_modules/react-native-permissions/ios'
-    pod 'Permission-AppTrackingTransparency', :path => "#{permissions_path}/AppTrackingTransparency"
-    pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
-    pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary"
   # Flags change depending on the env values.
   flags = get_default_flags()
 
