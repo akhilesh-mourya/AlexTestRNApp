@@ -1,6 +1,7 @@
 import {createApi, fetchBaseQuery, retry} from '@reduxjs/toolkit/query/react';
 import {BASE_URL} from '@env';
 
+console.log('BASE_URL====', BASE_URL)
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
   timeout: 30000,

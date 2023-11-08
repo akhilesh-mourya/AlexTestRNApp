@@ -27,7 +27,6 @@ export const Block = styled.View.attrs(() => ({}))`
 
 export const PlusIcon = styled(SvgXml).attrs<any>(() => ({
   xml: PLUS_ICON,
-  ml: scale(16),
 }))`
   ${color}
   ${space}

@@ -6,8 +6,11 @@ import {scale} from 'react-native-size-matters/extend';
 import {verticalScale} from 'react-native-size-matters/extend';
 import {moderateScale} from 'react-native-size-matters';
 import {FontFamily} from 'custom_enums';
+import {StatusBar} from 'react-native';
 
-export const MainContainer = styled.View.attrs(() => ({}))`
+export const MainContainer = styled.View.attrs(() => ({
+  mt: StatusBar?.currentHeight > 24 && verticalScale(16),
+}))`
   ${color};
   ${space};
   ${layout};

@@ -90,4 +90,5 @@ export const BGGradient: any = styled(LinearGradient).attrs(props => ({
 }))`
   ${color}
   ${space}
+  ${border}
 `;

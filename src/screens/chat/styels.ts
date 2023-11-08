@@ -35,7 +35,6 @@ export const Container = styled(KeyboardAwareScrollView).attrs(() => ({
   paddingBottom: verticalScale(16),
   keyboardShouldPersistTaps: 'always',
   enableAutomaticScroll: true,
-  enableOnAndroid: true,
   bounces: false,
 }))`
   ${color}
