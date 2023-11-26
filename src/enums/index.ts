@@ -50,13 +50,6 @@ export enum FontFamily {
   SemiBold = 'Manrope-Semibold',
 }
 
-export enum AuthDecorateImageType {
-  Login = 'login',
-  Signup = 'signUp',
-  ForgotPassword = 'forgetPassword',
-  ResetPassword = 'resetPassword',
-}
-
 export enum API_METHOD {
   Get = 'GET',
   Post = 'POST',
@@ -66,44 +59,6 @@ export enum API_METHOD {
 
 export enum SCREEN_NAME {
   Chat = 'Chat',
-}
-
-export enum StackNavigatorScreenKey {
-  WelcomeScreen = 'WelcomeScreen',
-  BottomTabs = 'BottomTabs',
-  SignInScreen = 'SignInScreen',
-  DashBoardStack = 'DashBoardStack',
-  DashBoardScreen = 'DashBoardScreen',
-  ViewAllDashBoardScreen = 'ViewAllDashBoardScreen',
-  InvoiceStack = 'InvoiceStack',
-  ClubHouseStack = 'ClubHouseStack',
-  SettingStack = 'SettingStack',
-  InvoicesScreen = 'Invoices',
-  CustomersScreen = 'CustomersScreen',
-  ClubHouseScreen = 'ClubHouseScreen',
-  ViewMemberListScreen = 'ViewMemberListScreen',
-  SettingsScreen = 'SettingsScreen',
-  AccountInformationScreen = 'AccountInformationScreen',
-  AccountInformationStack = 'AccountInformationStack',
-  ChangePasswordScreen = 'ChangePasswordScreen',
-  WebViewScreen = 'WebViewScreen',
-  DemoScreen = 'DemoScreen',
-  NewDemoScreen = 'NewDemoScreen',
-}
-
-export enum TabType {
-  First = 'first',
-  Second = 'second',
-}
-
-export enum DashBoardViewAllType {
-  Team = 'Team',
-  Program = 'Program',
-}
-
-export enum DashBoardInvoiceStatus {
-  Delinquent = 'Delinquent',
-  Good_Standing = 'Good Standing',
 }
 
 export interface StructuredProps {

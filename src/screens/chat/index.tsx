@@ -7,6 +7,7 @@ import {
   HeaderTitle,
   MainContainer,
   SafeAreaContainer,
+  SubContainer,
 } from './styels';
 import {CHAT_GRADIENT} from '../../constants/imageConstants';
 import {useGetChatsQuery} from '../../redux/chat/api';
@@ -69,23 +70,25 @@ const ChatScreen: FC<{}> = () => {
       <SafeAreaContainer>
         <Header />
         <Container>
-          {restructureMessageData ? (
-            <SectionList
-              sections={restructureMessageData}
-              showsVerticalScrollIndicator={false}
-              showsHorizontalScrollIndicator={false}
-              renderItem={renderMessageItem}
-              keyExtractor={(item, index) => `${item._id}_${index}`}
-              onEndReached={onLoadEarlierMessages}
-              renderSectionFooter={({section: {title}}) =>
-                renderSectionHeader(title)
-              }
-              inverted
-            />
-          ) : (
-            <Block />
-          )}
-          <Footer />
+          <SubContainer>
+            {restructureMessageData ? (
+              <SectionList
+                sections={restructureMessageData}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+                renderItem={renderMessageItem}
+                keyExtractor={(item, index) => `${item._id}_${index}`}
+                onEndReached={onLoadEarlierMessages}
+                renderSectionFooter={({section: {title}}) =>
+                  renderSectionHeader(title)
+                }
+                inverted
+              />
+            ) : (
+              <Block />
+            )}
+            <Footer />
+          </SubContainer>
         </Container>
       </SafeAreaContainer>
     </MainContainer>
